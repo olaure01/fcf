@@ -1225,11 +1225,14 @@ Instance RatRel_flip :
     RatRel (Basics.flip R).
 
 intuition.
-econstructor; intuition.
+econstructor.
+intuition.
 unfold Basics.flip.
 eapply refl.
 eapply eqRat_symm.
 intuition.
+unfold Basics.flip.
+intros ? ? ? ? ?; eapply trans; eassumption.
 
 unfold Proper, respectful, Basics.flip in *; intuition.
 eapply add_proper; trivial.
